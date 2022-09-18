@@ -12,15 +12,12 @@ provider "aws" {
   region = "ap-south-1" # define region as per your account
 }
 
-resource "aws_s3_bucket" "b" {
+resource "aws_s3_bucket" "new_bucket" {
   bucket = "demo-github-action"
-  acl    = "public-read"
 
-  cors_rule {
-    allowed_headers = ["*"]
-    allowed_methods = ["PUT", "POST"]
-    allowed_origins = ["*"]
-    expose_headers  = ["ETag"]
-    max_age_seconds = 3000
+  object_lock_enabled = false
+
+  tags = {
+    Environment = "Prod"
   }
 }
