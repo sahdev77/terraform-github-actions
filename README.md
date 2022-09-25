@@ -1,2 +1,2 @@
-# terraform-github-actions
+# terraform-cloud-github-actions
 Demo repo for terraform.
